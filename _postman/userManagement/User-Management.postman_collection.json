@@ -1,0 +1,460 @@
+{
+	"info": {
+		"_postman_id": "24e7d1e8-1217-4c4c-89cf-94d2eeeb03b0",
+		"name": "User-Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29420342"
+	},
+	"item": [
+		{
+			"name": "Get all users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhtb3VkLnNoZXJpZiIsImlhdCI6MTY5NTIwNzg4NCwiZXhwIjoxNjk1MjA5MzI0fQ.49_xcHypj2NNMXsJ0aNI59whxTOWAkWhPI8l1L5oT7s",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9100/api-user/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user by ID",
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": [
+						{
+							"key": "algorithm",
+							"value": "HS256",
+							"type": "string"
+						},
+						{
+							"key": "isSecretBase64Encoded",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "payload",
+							"value": "{}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "queryParamKey",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "header",
+							"value": "{}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhtb3VkLnNoZXJpZiIsImlhdCI6MTY5NTE3NDA5MCwiZXhwIjoxNjk1MTc1NTMwfQ.AX7YUmN83jxd-8oyrIBWoVotiATIT-bMjs5kTaa_6ZQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9100/api-user/users/Id/25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"users",
+						"Id",
+						"25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by username",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhtb3VkLnNoZXJpZmYiLCJpYXQiOjE2OTM5ODMxNzEsImV4cCI6MTY5Mzk4NDYxMX0.OfN_NC8PAQiXDsMP8fFvEJVNSBRwrMaBy2j4lw1qwIY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9100/api-user/users/username/user1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"users",
+						"username",
+						"user1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user by ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"7oda\",\r\n    \"fullname\": \"mahmoud\",\r\n    \"userPassword\": \"mahmoud12\",\r\n    \"email\": \"maam@s.com\",\r\n    \"mobile\": \"01001250\",\r\n    \"gender\": \"male\",\r\n    \"isActive\": true}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9100/api-user/users/Id/24",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"users",
+						"Id",
+						"24"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user by username",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"7oda\",\r\n    \"fullname\": \"ahmed\",\r\n    \"userPassword\": \"mahmoud12\",\r\n    \"email\": \"mm@s.com\",\r\n    \"mobile\": \"01001250\",\r\n    \"gender\": \"male\",\r\n    \"isActive\":true}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api-user/users/username/7oda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api-user",
+						"users",
+						"username",
+						"7oda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhtb3VkLnNoZXJpZmYiLCJpYXQiOjE2OTQwNzE2NTMsImV4cCI6MTY5NDA3MzA5M30.U-U3EwU8XZsH8RiEFinzMOblIUgQM-ErbyM7VQauz7U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9100/api-user/users/Id/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"users",
+						"Id",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user by usename",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9100/api-user/users/username/ahmed_",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"users",
+						"username",
+						"ahmed_"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"mahmoud.sherif\",\r\n    \"password\":\"mahmoud12\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9100/api-user/security/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"security",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"username\":\"rana.amerr\",\r\n    \"fullName\":\"rana amer\",\r\n    \"email\":\"ranaa@gmail.com\",\r\n    \"password\":\"rana1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9100/api-user/security/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"security",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activate",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhtb3VkLnNoZXJpZmYiLCJpYXQiOjE2OTM4MDk0OTUsImV4cCI6MTY5MzgxMDkzNX0.rf_KaMgoIfvmU7ZPQnaf31B9A1IvH_tlEsJGjyuhjds",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9100/api-user/users/17/activate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"users",
+						"17",
+						"activate"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhtb3VkLmJhZHIyIiwiaWF0IjoxNjkzNjE1NzkwLCJleHAiOjE2OTM2MTcyMzB9.aliRSiNZeTiMLF3gBFYnJXKqC6VqJMWMo_ONVR8vLco",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deactivate",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhtb3VkLnNoZXJpZmYiLCJpYXQiOjE2OTQwNzE2NTMsImV4cCI6MTY5NDA3MzA5M30.U-U3EwU8XZsH8RiEFinzMOblIUgQM-ErbyM7VQauz7U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9100/api-user/users/17/deactivate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"users",
+						"17",
+						"deactivate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Role",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhtb3VkLnNoZXJpZiIsImlhdCI6MTY5NTIwNzg4NCwiZXhwIjoxNjk1MjA5MzI0fQ.49_xcHypj2NNMXsJ0aNI59whxTOWAkWhPI8l1L5oT7s",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9100/api-user/privileges/roles/2/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"privileges",
+						"roles",
+						"2",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveRole",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhtb3VkLnNoZXJpZiIsImlhdCI6MTY5NTE3NzgyNywiZXhwIjoxNjk1MTc5MjY3fQ.5sVgH9Ke_17VC7Y17HPXe68uMGDLQVuDRU_ERC_1lxs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9100/api-user/users/1/remove/role",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"users",
+						"1",
+						"remove",
+						"role"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users with role",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhtb3VkLnNoZXJpZiIsImlhdCI6MTY5NTE3NzgyNywiZXhwIjoxNjk1MTc5MjY3fQ.5sVgH9Ke_17VC7Y17HPXe68uMGDLQVuDRU_ERC_1lxs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9100/api-user/users/role/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"users",
+						"role",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

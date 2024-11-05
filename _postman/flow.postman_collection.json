@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "664f3acb-4d22-4694-90d4-668eb4787cda",
+		"name": "flow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18846851"
+	},
+	"item": [
+		{
+			"name": "Register Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"username\":\"nada.nazeer\",\r\n    \"fullName\":\"nada nazeer2\",\r\n    \"email\":\"nadanazeer13@gmail.com\",\r\n    \"password\":\"nada123458\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9100/api-user/security/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"security",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"username\":\"admin\",\r\n     \"password\":\"admin123\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9100/api-user/security/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"security",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Role Copy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NTIyODEyNywiZXhwIjoxNjk1MjI5NTY3fQ.KoBIEPHbcLQPgHSkV9ktxHFqySGvdEY9-Xbw2EyjJwk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9100/api-user/privileges/roles/3/user/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"privileges",
+						"roles",
+						"3",
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create survey Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NTIyODMzMiwiZXhwIjoxNjk1MjI5NzcyfQ.LKXvAjbQ2KBr_7d1HDkDOdsVRHb1m5GKq1lXHWaXYoA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"survey1 \",\r\n  \"description\": \"survey 1111\",\r\n  \"startDate\": \"2023-09-21\",   \r\n  \"endDate\": \"2023-10-22\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/api-survey/survey",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"api-survey",
+						"survey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Questiont freet Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NTIyODMzMiwiZXhwIjoxNjk1MjI5NzcyfQ.LKXvAjbQ2KBr_7d1HDkDOdsVRHb1m5GKq1lXHWaXYoA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"questionText\": \"sq2\",\r\n    \"surveyId\":1,\r\n    \"questionTypeId\":3,\r\n    \"isMandatory\": 1,\r\n    \"questionOrder\":2,\r\n    \"isSelectingMultiChoiceAllowed\":0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/api-survey/surveys/1/questions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"api-survey",
+						"surveys",
+						"1",
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "distribute Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NTIyODMzMiwiZXhwIjoxNjk1MjI5NzcyfQ.LKXvAjbQ2KBr_7d1HDkDOdsVRHb1m5GKq1lXHWaXYoA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[2]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/api-survey/survey/distribute/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"api-survey",
+						"survey",
+						"distribute",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get survey questions Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NTIyODMzMiwiZXhwIjoxNjk1MjI5NzcyfQ.LKXvAjbQ2KBr_7d1HDkDOdsVRHb1m5GKq1lXHWaXYoA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9200/api-survey/surveys/bySurveyId/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"api-survey",
+						"surveys",
+						"bySurveyId",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submit all answrs Copy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NTIyODMzMiwiZXhwIjoxNjk1MjI5NzcyfQ.LKXvAjbQ2KBr_7d1HDkDOdsVRHb1m5GKq1lXHWaXYoA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"value\": \"Answer 1\"\r\n  },\r\n  {\r\n    \"value\": \"Answer 2\"\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/api-survey/surveys/submitAnswers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"api-survey",
+						"surveys",
+						"submitAnswers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll answers Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NTIyODkxMywiZXhwIjoxNjk1MjMwMzUzfQ.BvJoQio_lPx8Ke7iakfwTczc6q59wJyLzt3Ikg6HoNs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9200/api-survey/survey/getAnswers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"api-survey",
+						"survey",
+						"getAnswers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submit  survey Copy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NTIyODkxMywiZXhwIjoxNjk1MjMwMzUzfQ.BvJoQio_lPx8Ke7iakfwTczc6q59wJyLzt3Ikg6HoNs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9200/api-survey/survey/submit/1/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"api-survey",
+						"survey",
+						"submit",
+						"1",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "close survey Copy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NTIyODkxMywiZXhwIjoxNjk1MjMwMzUzfQ.BvJoQio_lPx8Ke7iakfwTczc6q59wJyLzt3Ikg6HoNs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9200/api-survey/survey/close/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"api-survey",
+						"survey",
+						"close",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

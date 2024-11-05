@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "3c638497-f389-4fc5-8fc5-0759009584c1",
+		"name": "Ntf-mgt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send Notification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"eventId\":1,\r\n    \"entityId\":1,\r\n    \"actorId\":2,\r\n    \"notifiers\":[1],\r\n    \"parameters\":{\r\n        \"deadline\":\"2023-09-19\"\r\n    }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9300/api-ntf/notifications/notify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9300",
+					"path": [
+						"api-ntf",
+						"notifications",
+						"notify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Notification By Jms",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"eventId\":1,\r\n    \"entityId\":1,\r\n    \"actorId\":2,\r\n    \"notifiers\":[1],\r\n    \"parameters\":{\r\n        \"deadline\":\"2023-09-19\"\r\n    }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9300/api-ntf/notifications/notify/jms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9300",
+					"path": [
+						"api-ntf",
+						"notifications",
+						"notify",
+						"jms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Event",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Registered User\",\r\n    \"subject\":\"New Userrrr Created\",\r\n    \"body\":\"Dear {username}, a new user with Id: {entity_id} has been created\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9300/api-ntf/events/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9300",
+					"path": [
+						"api-ntf",
+						"events",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Event",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Registered User\",\r\n    \"subject\":\"New User Created\",\r\n    \"body\":\"Dear {username}, a new user with Id: {entity_id} has been created\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9300/api-ntf/events/update/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9300",
+					"path": [
+						"api-ntf",
+						"events",
+						"update",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Event",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9300/api-ntf/events/delete/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9300",
+					"path": [
+						"api-ntf",
+						"events",
+						"delete",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Event Details By Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzINiJ9.eyJzdWIiOiJyYW5hLnRhcmVrIiwiaWF0IjoxNjk1MjQ5ODkxLCJleHAiOjE2OTUyNTEzMzF9.NRE4RmrBKaT7FwUsjV-u0ZxNDOz3DuTW39-tr40rq80",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9300/api-ntf/events/get/details/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9300",
+					"path": [
+						"api-ntf",
+						"events",
+						"get",
+						"details",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"rana.tarek\",\r\n    \"password\":\"rana1234\"\r\n    \r\n}\r\n\r\n// {\r\n//     \"username\":\"adminn\",\r\n//     \"password\":\"admin123\"\r\n    \r\n// }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9100/api-user/security/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"security",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"username\":\"rana.tarek\",\r\n    \"fullName\":\"Rana Tarek\",\r\n    \"email\":\"rana@gmail.com\",\r\n    \"password\":\"rana1234\",\r\n    \"isActive\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9100/api-user/security/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9100",
+					"path": [
+						"api-user",
+						"security",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
